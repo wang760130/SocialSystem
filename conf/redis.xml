@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <redis>
+    <servers>
+	   <add address="192.168.119.111" port="7392"/>
+	   <!--  
+	   <add address="192.168.119.111" port="6379"/>
+	   <add address="192.168.119.147" port="6379"/>
+	   <add address="192.168.119.121" port="6370" password="7aa3b12a7eeb6773"/>
+	   -->
+    </servers>
+    <pool connTimeOut="1000" initConn="10" minConn="5" maxConn="50" aliveCheck="true" readTimeOut="300" />
+  </redis>
+</configuration>
