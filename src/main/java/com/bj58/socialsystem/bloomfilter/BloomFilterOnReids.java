@@ -1,7 +1,5 @@
 package com.bj58.socialsystem.bloomfilter;
 
-import java.util.List;
-
 import redis.clients.jedis.ShardedJedis;
 import redis.clients.jedis.ShardedJedisPipeline;
 
@@ -23,7 +21,11 @@ public class BloomFilterOnReids {
 	private int bitSize;
 	
 	private static JRedisClient redisClient = JRedisProvider.getInstance().redis;
-
+	
+	public BloomFilterOnReids() {
+		this(0.00000001f, (int)Math.pow(2, 31));
+	}
+	
 	public BloomFilterOnReids(float errorRate, int maxKey) {
 		this.maxKey = maxKey;
 		this.errorRate = errorRate;

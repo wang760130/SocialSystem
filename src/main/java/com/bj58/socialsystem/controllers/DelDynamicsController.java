@@ -11,7 +11,7 @@ import com.bj58.wf.mvc.annotation.Path;
 public class DelDynamicsController {
 	
 	@Path("/dynamics/del")
-	public ActionResult dynamicsDel() {
+	public ActionResult delDynamics() {
 		return null;
 	}
 	

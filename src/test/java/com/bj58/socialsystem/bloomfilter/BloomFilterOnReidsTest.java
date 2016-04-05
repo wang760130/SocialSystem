@@ -21,7 +21,7 @@ public class BloomFilterOnReidsTest {
 	
 	@Before
 	public void init() {
-		bloomFilter = new BloomFilterOnReids(0.00000001f, (int)Math.pow(2, 31));
+		bloomFilter = new BloomFilterOnReids();
 	}
 	
 	@Test

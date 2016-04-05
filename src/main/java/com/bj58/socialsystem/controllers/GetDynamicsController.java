@@ -11,7 +11,7 @@ import com.bj58.wf.mvc.annotation.Path;
 public class GetDynamicsController {
 	
 	@Path("/dynamics/get")
-	public ActionResult dynamicsGet() {
+	public ActionResult getDynamics() {
 		return null;
 	}
 	
