@@ -16,7 +16,7 @@ public class RedisKey {
 	// 用户好友 set
 	public static final String FIRENDS = "jerry_firends_";
 	
-	// 动态信息 hash key:id key:la key:lo 
+	// 动态信息 hash key:id key:la key:lo key:like key:unlike
 	public static final String DYNAMICS = "jerry_dynamics_";
 	
 	// 用户好友的动态  zset 
@@ -26,5 +26,8 @@ public class RedisKey {
 	public static final String USER_DYNAMICS_GEO = "jerry_user_dunamics_geo_";
 	
 	// 用户喜欢不喜欢  hash
-	public static final String THUMBS = "jerry_thumbs_";
+//	public static final String THUMBS = "jerry_thumbs_";
+	
+	// 动态发布队列  list
+	public static final String PUBLIC_DYNAMICS = "jerry_public_dunamic";
 }

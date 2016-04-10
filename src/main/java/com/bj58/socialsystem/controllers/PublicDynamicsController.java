@@ -12,13 +12,24 @@ import com.bj58.wf.mvc.annotation.Path;
  */
 public class PublicDynamicsController {
 	
+	BloomFilterOnReids bloomFilter = null;
+	
 	@Path("/dynamics/public")
 	public ActionResult publicDynamics() {
 		
-		String text = "";
 		String userid = "";
+		String text = "";
+		String lon = "";
+		String lat = "";
 		
-		BloomFilterOnReids bloomFilter = new BloomFilterOnReids();
+		bloomFilter = new BloomFilterOnReids();
+		boolean isExit = bloomFilter.isExit(RedisKey.ALL_DYNAMICS, text);
+		
+		if(isExit == true) {
+			
+		}
+		
+		// 添加bit
 		bloomFilter.add(RedisKey.ALL_DYNAMICS, text);
 		
 		return null;
