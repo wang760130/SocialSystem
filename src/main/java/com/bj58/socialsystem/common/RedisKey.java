@@ -29,5 +29,8 @@ public class RedisKey {
 //	public static final String THUMBS = "jerry_thumbs_";
 	
 	// 动态发布队列  list
-	public static final String PUBLIC_DYNAMICS = "jerry_public_dunamic";
+	public static final String PUBLIC_DYNAMICS_QUEUE = "jerry_public_dynamics_queue";
+	
+	// 动态删除队列  list
+	public static final String DELETE_DYANMICS_QUEUE = "jerry_delete_dynamics_queue";
 }
