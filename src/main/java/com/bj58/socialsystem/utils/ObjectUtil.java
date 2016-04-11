@@ -12,11 +12,7 @@ import java.io.ObjectOutputStream;
  * @date   2016年4月4日
  */
 public class ObjectUtil {
-	
-//	 JedisUtil.lpush(redisKey, ObjectUtil.objectToBytes(msg1));
-	
-//	 byte[] bytes = JedisUtil.rpop(redisKey);
-//   Message msg = (Message) ObjectUtil.bytesToObject(bytes);
+	private static final String DEFAULT_CHARSET = "UTF-8";
 	
 	 /**对象转byte[]
      * @param obj
@@ -43,6 +39,32 @@ public class ObjectUtil {
         return bytes;
     }
     
+    /**
+     * 对象转string
+     * @param obj
+     * @return
+     * @throws Exception
+     */
+    public static String objectToString(Object obj) throws Exception{
+    	ByteArrayOutputStream bo = null;
+    	ObjectOutputStream oo = null;
+    	String str = null;
+    	try {
+    		bo = new ByteArrayOutputStream();
+            oo = new ObjectOutputStream(bo);
+            oo.writeObject(obj);
+            str = bo.toString(DEFAULT_CHARSET);
+    	} finally {
+    		if(oo != null) {
+    			oo.close();
+    		}
+    		if(bo != null) {
+    			bo.close();
+    		}
+    	}
+        return str;
+    }
+    
     /**byte[]转对象
      * @param bytes
      * @return
@@ -53,6 +75,30 @@ public class ObjectUtil {
         ObjectInputStream ois = null;
         try {
         	bis= new ByteArrayInputStream(bytes);
+            ois = new ObjectInputStream(bis);
+        } finally {
+        	if(ois != null) {
+        		ois.close();
+        	}
+        	if(bis != null) {
+        		bis.close();	
+        	}
+        }
+        
+        return ois.readObject();
+    }
+    
+    /**
+     * string转对象 
+     * @param str
+     * @return
+     * @throws Exception
+     */
+    public static Object stringToObject(String str) throws Exception {
+        ByteArrayInputStream bis  = null;
+        ObjectInputStream ois = null;
+        try {
+        	bis= new ByteArrayInputStream(str.getBytes(DEFAULT_CHARSET));
             ois = new ObjectInputStream(bis);
         } finally {
         	if(ois != null) {

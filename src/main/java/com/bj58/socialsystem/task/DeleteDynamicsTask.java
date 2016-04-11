@@ -24,7 +24,6 @@ public class DeleteDynamicsTask implements Task {
 		Set<Serializable> executedTaskSet = new HashSet<Serializable>();
 		
 		task = taskQueue.popTask();
-		
 		while(task != null) {
 			if(executedTaskSet.contains(task)) {
 				taskQueue.pushTask(task);

@@ -6,13 +6,16 @@ import com.bj58.socialsystem.entity.Dynamics;
 import com.bj58.socialsystem.queue.TaskQueue;
 import com.bj58.socialsystem.queue.TaskQueueManager;
 import com.bj58.socialsystem.utils.ObjectUtil;
+import com.bj58.wf.mvc.ActionResult;
+import com.bj58.wf.mvc.MvcController;
+import com.bj58.wf.mvc.annotation.Path;
 
 /**
  * @author Wangjiajun 
  * @Email  wangjiajun@58.com
  * @date   2016年4月1日
  */
-public class PublicDynamicsController {
+public class PublicDynamicsController extends MvcController {
 	
 	BloomFilterOnReids bloomFilter = null;
 	
@@ -40,7 +43,11 @@ public class PublicDynamicsController {
 		dynamics.setText(text);
 		
 		TaskQueue taskQueue = TaskQueueManager.get(TaskQueueManager.PUBLIC_DYNAMICS_QUEUE);
-		taskQueue.pushTask(ObjectUtil.objectToBytes(dynamics));
+		try {
+			taskQueue.pushTask(ObjectUtil.objectToString(dynamics));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		return null;
 	}

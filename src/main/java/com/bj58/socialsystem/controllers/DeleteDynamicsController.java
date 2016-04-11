@@ -1,6 +1,7 @@
 package com.bj58.socialsystem.controllers;
 
 import com.bj58.wf.mvc.ActionResult;
+import com.bj58.wf.mvc.MvcController;
 import com.bj58.wf.mvc.annotation.Path;
 
 /**
@@ -8,7 +9,7 @@ import com.bj58.wf.mvc.annotation.Path;
  * @Email  wangjiajun@58.com
  * @date   2016年4月1日
  */
-public class DeleteDynamicsController {
+public class DeleteDynamicsController extends MvcController {
 	
 	@Path("/dynamics/del")
 	public ActionResult delDynamics() {
