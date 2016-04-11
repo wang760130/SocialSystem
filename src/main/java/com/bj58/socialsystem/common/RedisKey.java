@@ -33,4 +33,7 @@ public class RedisKey {
 	
 	// 动态删除队列  list
 	public static final String DELETE_DYANMICS_QUEUE = "jerry_delete_dynamics_queue";
+	
+	// 点赞队列 list
+	public static final String THUMBS_QUEUE = "jerry_thumbs_queue";
 }

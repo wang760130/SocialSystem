@@ -39,7 +39,8 @@ public class PublicDynamicsController extends MvcController {
 		
 		Dynamics dynamics = new Dynamics();
 		dynamics.setUserid(Long.valueOf(userid));
-		dynamics.setCoords(lon + "," + lat);
+		dynamics.setLon(lon);
+		dynamics.setLat(lat);
 		dynamics.setText(text);
 		
 		TaskQueue taskQueue = TaskQueueManager.get(TaskQueueManager.PUBLIC_DYNAMICS_QUEUE);

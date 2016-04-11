@@ -17,6 +17,10 @@ public class Dynamics {
 	private Date addtime;
 	
 	private short state;
+	
+	private String lon;
+	
+	private String lat;
 
 	public long getId() {
 		return id;
@@ -72,6 +76,22 @@ public class Dynamics {
 
 	public void setState(short state) {
 		this.state = state;
+	}
+
+	public String getLon() {
+		return lon;
+	}
+
+	public void setLon(String lon) {
+		this.lon = lon;
+	}
+
+	public String getLat() {
+		return lat;
+	}
+
+	public void setLat(String lat) {
+		this.lat = lat;
 	}
 	
 }
