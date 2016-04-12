@@ -100,6 +100,12 @@
 			<artifactId>commons-codec</artifactId>
 			<version>1.10</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>com.spatial4j</groupId>
+		    <artifactId>spatial4j</artifactId>
+		    <version>0.5</version>
+		</dependency>
 
 	</dependencies>
 

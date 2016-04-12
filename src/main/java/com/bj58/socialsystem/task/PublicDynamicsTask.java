@@ -13,7 +13,7 @@ import com.bj58.socialsystem.utils.ObjectUtil;
  * @Email  wangjiajun@58.com
  * @date   2016年4月11日
  */
-public class PublicDynamicsTask implements Task  {
+public class PublicDynamicsTask implements Task {
 	private static JRedisClient redisClient = JRedisProvider.getInstance().redis;
 	
 	@Override
