@@ -1,9 +1,12 @@
 package com.bj58.socialsystem.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	private long id;
 	
 	private String name;
