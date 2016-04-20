@@ -22,8 +22,8 @@ public class RedisKey {
 	// 用户好友的动态  zset 
 	public static final String FIRENDS_DYNAMICS = "jerry_firends_dynamics_";
 	
-	// 用户动态位置信息 geo
-	public static final String USER_DYNAMICS_GEO = "jerry_user_dunamics_geo_";
+	// 动态位置信息 geo
+	public static final String DYNAMICS_GEO = "jerry_dunamics_geo";
 	
 	// 用户喜欢不喜欢  hash
 //	public static final String THUMBS = "jerry_thumbs_";

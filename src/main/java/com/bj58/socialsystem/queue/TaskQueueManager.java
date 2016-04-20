@@ -19,9 +19,12 @@ public class TaskQueueManager {
 	
 	public static final String DELETE_DYNAMICS_QUEUE = RedisKey.DELETE_DYANMICS_QUEUE;
 	
+	public static final String THUMBS_DYNAMICS_QUEUE = RedisKey.THUMBS_QUEUE;
+	
 	public static void init() {
 		queneMap.put(PUBLIC_DYNAMICS_QUEUE, new TaskQueue(PUBLIC_DYNAMICS_QUEUE));
 		queneMap.put(DELETE_DYNAMICS_QUEUE, new TaskQueue(DELETE_DYNAMICS_QUEUE));
+		queneMap.put(THUMBS_DYNAMICS_QUEUE, new TaskQueue(THUMBS_DYNAMICS_QUEUE));
 	}
 	
 	static {

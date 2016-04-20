@@ -6,11 +6,9 @@ import org.junit.Test;
 
 import redis.clients.jedis.GeoRadiusResponse;
 
-import com.bj58.socialsystem.demo.LBSInRedis;
-import com.bj58.socialsystem.demo.LBSInRedisGeo;
+import com.bj58.socialsystem.utils.LBSInRedisGeo;
 import com.bj58.socialsystem.utils.StopWatch;
 import com.bj58.socialsystem.utils.ThreadLocalRandom;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
 
 public class LBSInRedisGeoTest {
 	

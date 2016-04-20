@@ -3,6 +3,8 @@ package com.bj58.socialsystem.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.bj58.sfft.utility.dao.annotation.NotDBColumn;
+
 public class Dynamics implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -21,9 +23,17 @@ public class Dynamics implements Serializable {
 	
 	private short state;
 	
+	@NotDBColumn
+	private String addtimeStr;
+	
+	@NotDBColumn
 	private String lon;
 	
+	@NotDBColumn
 	private String lat;
+	
+	@NotDBColumn
+	private double distance;
 
 	public long getId() {
 		return id;
@@ -80,6 +90,14 @@ public class Dynamics implements Serializable {
 	public void setState(short state) {
 		this.state = state;
 	}
+	
+	public String getAddtimeStr() {
+		return addtimeStr;
+	}
+
+	public void setAddtimeStr(String addtimeStr) {
+		this.addtimeStr = addtimeStr;
+	}
 
 	public String getLon() {
 		return lon;
@@ -95,6 +113,14 @@ public class Dynamics implements Serializable {
 
 	public void setLat(String lat) {
 		this.lat = lat;
+	}
+
+	public double getDistance() {
+		return distance;
+	}
+
+	public void setDistance(double distance) {
+		this.distance = distance;
 	}
 	
 }

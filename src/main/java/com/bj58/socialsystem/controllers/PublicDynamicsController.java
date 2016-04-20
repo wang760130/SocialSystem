@@ -37,16 +37,10 @@ public class PublicDynamicsController extends MvcController {
 		// 添加bit
 		bloomFilter.add(RedisKey.ALL_DYNAMICS, text);
 		
-		Dynamics dynamics = new Dynamics();
-		dynamics.setUserid(Long.valueOf(userid));
-		dynamics.setLon(lon);
-		dynamics.setLat(lat);
-		dynamics.setText(text);
-		
 		TaskQueue taskQueue = TaskQueueManager.get(TaskQueueManager.PUBLIC_DYNAMICS_QUEUE);
 		try {
-			taskQueue.pushTask(ObjectUtil.objectToString(dynamics));
-		} catch (Exception e) {
+			taskQueue.pushTask(userid + "/t" + lon + "/t" + lat + "/t" + text);
+		} catch (Exception e) { 
 			e.printStackTrace();
 		}
 		
